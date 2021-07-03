@@ -1,33 +1,141 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>FlightSurety</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
 
-<body>
-
+  <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">FlightSurety</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <a class="navbar-brand" href="#">FlightSurety</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </nav>
 
     <main class="container">
+      <section class="border p-4">
+        <h2>AIRLINE FUNDING</h2>
+        <form class="form top-20">
+          <p>
+            <label for="airline">
+              <span>Airline:</span>
+              <select id="airline-select" name="airline"></select>
+            </label>
+          </p>
+          <p>
+            <label for="airline-ether-amount"
+              ><span>ETH: </span
+              ><input type="number" id="airline-ether-amount" max="1"
+            /></label>
+          </p>
+          <button class="btn btn-primary" id="send-funds">Send funds</button>
+        </form>
+      </section>
 
-        <div id="display-wrapper" class="top-20">
-        </div>
-        <div class="row top-20">
-            <label class="form">Flight</label> <input type="text" id="flight-number"> <btn class="btn btn-primary" id="submit-oracle">Submit to Oracles</btn>
-        </div>
+      <section class="border p-4">
+        <h2>REGISTER FLIGHT</h2>
+        <form class="form top-20">
+          <p>
+            <label for="register-flight-airline-select">
+              <span>Airline:</span>
+              <select
+                id="register-flight-airline-select"
+                name="register-flight-airline-select"
+              ></select>
+            </label>
+          </p>
+          <p>
+            <label for="register-flight-name"
+              ><span>Flight name: </span
+              ><input type="text" id="register-flight-name"
+            /></label>
+          </p>
+          <p>
+            <label for="register-flight-timestamp"
+              ><span>Flight time: </span
+              ><input
+                type="text"
+                id="register-flight-timestamp"
+                value="1457002775"
+            /></label>
+          </p>
+          <button class="btn btn-primary" id="register-flight">
+            Register flight
+          </button>
+        </form>
+      </section>
+
+      <section class="border p-4">
+        <h2>BUY FLIGHT INSURANCE</h2>
+        <p>Passengers may pay up to 1 ether for purchasing flight insurance.</p>
+        <form class="top-20">
+          <p>
+            <label for="flight">
+              <span>Select the flight to insure:</span>
+              <select id="flight-select" name="flight">
+                <option value="visa">AV540</option>
+                <option value="mc">ZZ123</option>
+                <option value="amex">UA12</option>
+              </select>
+            </label>
+          </p>
+          <p>
+            <label for="flight-ether-amount"
+              ><span>ETH: </span
+              ><input type="number" id="flight-ether-amount" max="1"
+            /></label>
+          </p>
+          <button class="btn btn-primary" id="buy-flight-insurance">
+            Buy flight insurance
+          </button>
+        </form>
+      </section>
+
+      <section class="border p-4">
+        <h2>FLIGHT UPDATE</h2>
+        <div id="display-wrapper" class="top-20"></div>
+        <form class="top-20">
+          <p>
+            <label for="flight-number"
+              ><span>Flight: </span><input type="text" id="flight-number"
+            /></label>
+          </p>
+          <button class="btn btn-primary" id="submit-to-oracles">
+            Submit to oracles
+          </button>
+        </form>
+      </section>
+
+      <section class="border p-4">
+        <h2>CLAIM INSURANCE</h2>
+        <p>
+          If flight is delayed due to airline fault, passenger receives credit
+          of 1.5X the amount they paid. The passenger can withdraw any funds
+          owed to them as a result of receiving credit for insurance payout.
+          Insurance payouts are not sent directly to passenger’s wallet
+        </p>
+        <button class="btn btn-primary" id="claim-insurance">
+          Claim insurance
+        </button>
+      </section>
     </main>
-
-</body>
-
+  </body>
 </html>
